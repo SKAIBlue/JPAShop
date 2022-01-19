@@ -31,5 +31,7 @@ class MemberRepositoryTest {
         // then
         assertThat(findMember.getId()).isEqualTo(member.getId());
         assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+        // 영속성 Context에서 데이터를 조회하기 때문에 테스트 통과
+        assertThat(findMember).isEqualTo(member);
     }
 }
